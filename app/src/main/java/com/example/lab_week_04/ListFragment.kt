@@ -39,14 +39,14 @@ class ListFragment : Fragment() {
             view.findViewById(R.id.latte)
         )
 
-        coffeeList.forEach { coffeeList ->
+        coffeeList.forEach { coffee ->
             val fragmentBundle = Bundle()
-            fragmentBundle.putInt(COFFEE_ID, coffeeList.id)
-            coffeeList.setOnClickListener {
+            fragmentBundle.putInt(COFFEE_ID, coffee.id)
+            coffee.setOnClickListener (
                 Navigation.createNavigateOnClickListener(
                     R.id.action_listFragment_to_detailFragment, fragmentBundle
                 )
-            }
+            )
         }
     }
 
